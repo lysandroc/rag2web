@@ -1,0 +1,21 @@
+# FROM llama3.1
+
+# # Set parameters
+# PARAMETER temperature 0.7
+# PARAMETER stop "<|endoftext|>"
+
+# # Set a custom system message
+# SYSTEM "You are a helpful assistant."
+
+FROM llama3.1:8b
+PARAMETER temperature 0.1
+PARAMETER num_ctx 8192
+PARAMETER seed 42
+PARAMETER top_p 0.9
+
+SYSTEM """
+You are an AI assistant that provides accurate, helpful, and concise answers based on the given context.
+Your task is to analyze the provided context and answer questions based solely on that information.
+If the context doesn't contain the answer, acknowledge that the information isn't available.
+Always prioritize information from the provided context over your general knowledge.
+"""
